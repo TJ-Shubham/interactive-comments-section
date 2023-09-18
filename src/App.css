@@ -17,4 +17,92 @@
 
 body{
   font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
 }
+
+.app{
+  background-color: var(--Very-light-gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.comment{
+  background-color: var(--White);
+  margin:1em 0.8em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5em;
+}
+
+.main-comments {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.main-comments>p{
+  color: var(--Grayish-Blue);
+  line-height: 1.5;
+}
+
+.comments-header{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.comments-header>img{
+  height: 35px;
+  width: 35px;
+}
+
+.comments-header :nth-child(2){
+  font-weight: 500;
+  color: var(--Dark-blue);
+}
+
+.comments-header :last-child{
+  color: var(--Grayish-Blue);
+}
+
+.buttons, .score{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons>button{
+  border: none;
+  color: var(--Moderate-blue);
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: var(--White);
+  cursor: pointer;
+}
+
+.buttons>button>img{
+  margin-right: 0.5em;
+}
+
+.score{
+  gap: 1rem;
+  font-weight: 500;
+  background-color: var(--Very-light-gray);
+  color: var(--Moderate-blue);
+  border-radius: 15px;
+  padding: 0 0.8em;
+}
+
+.score > button{
+  border: none;
+  background-color: var(--light-gray);
+  font-size: 1.2rem;
+  color: var(--light-gray);
+  cursor: pointer;
+}
+
+
