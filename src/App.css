@@ -105,4 +105,8 @@ body{
   cursor: pointer;
 }
 
+.currentUser{
+  background-color: var(--Moderate-blue);
+}
+
 
