@@ -77,7 +77,6 @@ body{
 
 .buttons>button{
   border: none;
-  color: var(--Moderate-blue);
   font-weight: 700;
   font-size: 1rem;
   background-color: var(--White);
@@ -86,6 +85,14 @@ body{
 
 .buttons>button>img{
   margin-right: 0.5em;
+}
+
+.btn{
+  color: var(--Moderate-blue);
+}
+
+.red-btn{
+  color: var(--Soft-Red);
 }
 
 .score{
@@ -108,5 +115,4 @@ body{
 .currentUser{
   background-color: var(--Moderate-blue);
 }
-
 

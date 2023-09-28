@@ -1,5 +1,7 @@
 import Button from "./Button";
-import deleteLogo from "../assets/icon-reply.svg";
+import replyLogo from "../assets/icon-reply.svg";
+import editLogo from "../assets/icon-edit.svg";
+import deleteLogo from "../assets/icon-delete.svg";
 import Score from "./Score";
 import { useState } from "react";
 
@@ -20,12 +22,18 @@ export default function Comment({ comment, currentUser }) {
         <Score initialScore={comment.score} />
         {isCurrentUser ? (
           <>
-            <Button>Edit</Button>
-            <Button>Delete</Button>
+            <Button className="red-btn">
+              <img src={deleteLogo} alt="delete logo" />
+              Delete
+            </Button>
+            <Button className="btn">
+              <img src={editLogo} alt="edit logo" />
+              Edit
+            </Button>
           </>
         ) : (
-          <Button>
-            <img src={deleteLogo} alt="reply logo" />
+          <Button className="btn">
+            <img src={replyLogo} alt="reply logo" />
             Reply
           </Button>
         )}
@@ -48,12 +56,18 @@ export default function Comment({ comment, currentUser }) {
                 <Score initialScore={reply.score} />
                 {isReplyFromCurrentUser ? (
                   <>
-                    <Button>Edit</Button>
-                    <Button>Delete</Button>
+                    <Button className="red-btn">
+                      <img src={deleteLogo} alt="delete logo" />
+                      Delete
+                    </Button>
+                    <Button className="btn">
+                      <img src={editLogo} alt="edit logo" />
+                      Edit
+                    </Button>
                   </>
                 ) : (
-                  <Button>
-                    <img src={deleteLogo} alt="reply logo" />
+                  <Button className="btn">
+                    <img src={replyLogo} alt="reply logo" />
                     Reply
                   </Button>
                 )}
