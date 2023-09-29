@@ -1,5 +1,6 @@
 import './App.css';
 import Comment from './components/Comment';
+import NewComment from './components/NewComment';
 import data from './data.json';
 
 function App() {
