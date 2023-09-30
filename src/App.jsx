@@ -11,6 +11,7 @@ function App() {
       {data.comments.map((comment) => (
         <Comment  key={comment.id} comment={comment} currentUser={currentUser} />
       ))}
+      <NewComment />
     </div>
   );
 }
