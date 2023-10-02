@@ -2,7 +2,7 @@ import { useState } from "react"
 import Button from "./Button";
 
 
-export default function NewComment() {
+export default function NewComment({currentUser}) {
     const [text, setText] = useState("");
 
 
@@ -12,7 +12,7 @@ export default function NewComment() {
 
   return (
     <form>
-        <img src="" alt="" />
+        <img src={currentUser.image.png} alt={currentUser.username} />
         <textarea value={text} onChange={handleChange} placeholder="Add a commnet" ></textarea>
         <Button>Send</Button>
     </form>
