@@ -14,6 +14,11 @@
   --White: hsl(0, 0%, 100%);
 }
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body{
   font-family: 'Rubik', sans-serif;
@@ -115,4 +120,57 @@ body{
 .currentUser{
   background-color: var(--Moderate-blue);
 }
+
+.new-reply {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+      "textarea"
+      "img-button";
+  gap: 10px;
+  width: 100%;
+  margin: auto 1em;
+  padding: 1em;
+  background-color: var(--White);
+}
+
+.new-reply textarea {
+  grid-area: textarea;
+  width: 100%;
+  border: 1px solid var(--Light-gray);
+  height: 5rem;
+  border-radius: 5px;
+  padding: 1em;
+  color: var(--Grayish-Blue);
+  font-size: 1rem;
+  resize: none;
+}
+
+.new-reply textarea::placeholder{
+  color: var(--Grayish-Blue);
+}
+
+.new-reply textarea:focus {
+  outline: 1px solid var(--Grayish-Blue);
+}
+
+.new-reply img {
+  grid-area:  img-button;
+  justify-self: start;
+  height: 35px;
+  width: 35px;
+}
+
+.form-button {
+  grid-area: img-button;
+  justify-self: end;
+  padding: 0.9em 2em;
+  border-radius: 10px;
+  font-weight: 700;
+  color: var(--White);
+  border: none;
+  background-color: var(--Moderate-blue);
+}
+
+
 

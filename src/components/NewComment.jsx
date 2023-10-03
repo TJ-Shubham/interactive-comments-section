@@ -11,10 +11,10 @@ export default function NewComment({currentUser}) {
     }
 
   return (
-    <form>
+    <form className="new-reply">
+        <textarea value={text} onChange={handleChange} placeholder="Add a comment..." ></textarea>
         <img src={currentUser.image.png} alt={currentUser.username} />
-        <textarea value={text} onChange={handleChange} placeholder="Add a commnet" ></textarea>
-        <Button>Send</Button>
+        <Button className="form-button">Send</Button>
     </form>
   )
 }
