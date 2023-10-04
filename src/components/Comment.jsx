@@ -4,10 +4,19 @@ import editLogo from "../assets/icon-edit.svg";
 import deleteLogo from "../assets/icon-delete.svg";
 import Score from "./Score";
 import { useState } from "react";
+import NewComment from './NewComment';
 
-export default function Comment({ comment, currentUser }) {
+
+export default function Comment({ comment, currentUser, onCommentSubmit }) {
   const [replies, setReplies] = useState(comment.replies);
+  const [isReplying, setIsReplying] = useState(false);
   const isCurrentUser = comment.user.username === currentUser.username;
+
+
+  function handleReply() {
+    setIsReplying(!isReplying); 
+  }
+
   return (
     <div className="comment">
       <div className="main-comments">
@@ -32,7 +41,7 @@ export default function Comment({ comment, currentUser }) {
             </Button>
           </>
         ) : (
-          <Button className="btn">
+          <Button className="btn" onClick={handleReply}>
             <img src={replyLogo} alt="reply logo" />
             Reply
           </Button>
@@ -76,6 +85,7 @@ export default function Comment({ comment, currentUser }) {
           );
         })}
       </div>
+      {isReplying && <NewComment currentUser={currentUser} replyingTo={comment.user.username} onCommentSubmit={onCommentSubmit} />}
     </div>
   );
 }
