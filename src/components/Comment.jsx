@@ -47,7 +47,6 @@ export default function Comment({ comment, currentUser, onCommentSubmit }) {
           </Button>
         )}
       </div>
-      <hr />
       <div className="replies">
         {replies.map((reply) => {
           const isReplyFromCurrentUser = reply.user.username === currentUser.username;

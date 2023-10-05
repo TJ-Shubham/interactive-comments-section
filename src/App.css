@@ -106,7 +106,7 @@ body{
   background-color: var(--Very-light-gray);
   color: var(--Moderate-blue);
   border-radius: 15px;
-  padding: 0 0.8em;
+  padding:  0.6em;
 }
 
 .score > button{
