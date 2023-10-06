@@ -104,16 +104,19 @@ body{
   gap: 1rem;
   font-weight: 500;
   background-color: var(--Very-light-gray);
-  color: var(--Moderate-blue);
   border-radius: 15px;
   padding:  0.6em;
+}
+
+.score>p{
+  color: var(--Moderate-blue);
 }
 
 .score > button{
   border: none;
   background-color: var(--light-gray);
+  color: var(--Light-grayish-blue);
   font-size: 1.2rem;
-  color: var(--light-gray);
   cursor: pointer;
 }
 
