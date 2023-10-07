@@ -18,7 +18,7 @@ export default function NewComment({currentUser, replyingTo, onCommentSubmit}) {
 
   return (
     <form className="new-reply" onSubmit={handleSubmit}>
-        <textarea value={text} onChange={handleChange} placeholder={`Add a comment${replyingTo ? ' to @' + replyingTo : ''}...`} ></textarea>
+        <textarea value={text} onChange={handleChange} placeholder="Add a comment" ></textarea>
         <img src={currentUser.image.png} alt={currentUser.username} />
         <Button className="form-button">{replyingTo ? 'Reply' : 'Send'}</Button>
     </form>
