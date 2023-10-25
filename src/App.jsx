@@ -112,15 +112,16 @@ function Comment({comment, currentUser}){
           )}
         </div>
       </li>
-      {comment.replies && <ul className="border-l-2 border-gray-300 pl-2 mt-4 ml-4">{comment.replies.map((reply)=>(<CommentReplies reply={reply} key={reply.id} currentUser={currentUser} />))}</ul> }
+      {comment.replies && <ul className="border-l-2 border-gray-300 pl-2 mt-4 ml-4">{comment.replies.map((reply)=>(<CommentReplies reply={reply} key={reply.id} currentUser={currentUser} handleDeleteClick={handleDeleteClick} />))}</ul> }
       {showDeleteModal && <DeleteModal />}
       </>
   )
 }
 
-function CommentReplies({reply, currentUser}){
+function CommentReplies({reply, currentUser, handleDeleteClick}){
 
   const { score, handleIncrement, handleDecrement } = useScore(reply.score);
+  const isCurrentUser = reply.user.username === currentUser.username;
 
   return(
     <li className="bg-white p-3 mx-3 mb-4 my-0 grid grid-cols-1 rounded-md">
@@ -130,13 +131,19 @@ function CommentReplies({reply, currentUser}){
         <p className="text-neutral-graylish font-medium">{reply.createdAt}</p>
       </div>
       <p className="text-neutral-graylish font-medium my-4"><span className="font-bold text-primary-blue" >@{reply.replyingTo}</span> {reply.content}</p>
-      <div className="grid grid-cols-2 gap-24">
+      <div className="grid grid-cols-2 gap-10">
         <div className="flex justify-center items-center gap-4 bg-gray-200  px-3 py-2 rounded-xl col-span-1">
           <button onClick={handleIncrement}><img src={plusIcon} alt="Plus Icon" /></button>
           <p className="text-primary-blue font-bold">{score}</p>
           <button onClick={handleDecrement}><img src={minusIcon} alt="minus Icon" /></button>
         </div>
-        <button className="text-primary-blue font-bold flex items-center gap-2 col-span-"><img src={replyIcon} alt="reply Icon" />Reply</button>
+        {!isCurrentUser && (<button className="text-primary-blue font-bold flex items-center gap-2"><img src={replyIcon} alt="reply Icon" />Reply</button>)}
+          {isCurrentUser && (
+            <div className="flex justify-around items-center">
+              <button className="text-red-500 font-bold flex items-center gap-1" onClick={handleDeleteClick}><img src={deleteIcon} alt="delete Icon" />Delete</button>
+              <button className="text-primary-blue font-bold flex items-center gap-1"><img src={editIcon} alt="edit Icon" />Edit</button>
+            </div>
+          )}
       </div>
     </li>
   )
