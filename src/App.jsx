@@ -66,8 +66,6 @@ export default App
 
 
 function CommentsList({currentUser, comments}){
-  
-  
 
   return(
     <ul className="py-4">
