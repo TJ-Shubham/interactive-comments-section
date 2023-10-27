@@ -10,32 +10,14 @@ function App() {
   const currentUser = userData.currentUser;
   const[comments, setComments] = useState(userData.comments);
   const[text, setText] = useState("");
-  const [currentTime, setCurrentTime] = useState(new Date());
-
-  // for display human readble format
-  function timeSince(date) {
-    const seconds = Math.floor((currentTime - date) / 1000);
-    let interval = Math.floor(seconds / 31536000);
-
-    if (interval > 1) return `${interval.toString().padStart(2, '0')} years ago`;
-    interval = Math.floor(seconds / 2592000);
-    if (interval > 1) return `${interval.toString().padStart(2, '0')} months ago`;
-    interval = Math.floor(seconds / 86400);
-    if (interval > 1) return `${interval.toString().padStart(2, '0')} days ago`;
-    interval = Math.floor(seconds / 3600);
-    if (interval > 1) return `${interval.toString().padStart(2, '0')} hours ago`;
-    interval = Math.floor(seconds / 60);
-    if (interval > 1) return `${interval.toString().padStart(2, '0')} minutes ago`;
-    
-    return `${Math.max(0, seconds).toString().padStart(2, '0')} seconds ago`;
-  }
+  
 
   const handleCommentSubmit = (e) => {
     e.preventDefault();
     const newComment = {
       id: Date.now(),
       content: text,
-      createdAt: timeSince(new Date()),
+      createdAt: "Just now",
       score: 0,
       user: currentUser,
       replies: [],
@@ -43,15 +25,6 @@ function App() {
     setComments((prevComments) => [...prevComments, newComment]);
     setText('');
   };
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 60000);
-    return () => clearInterval(timer);
-  }, []);
-
-
 
   return (
     <div className="bg-slate-100">
