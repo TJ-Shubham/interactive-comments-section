@@ -4,7 +4,7 @@ import plusIcon from "./assets/icon-plus.svg";
 import minusIcon from "./assets/icon-minus.svg"
 import editIcon from "./assets/icon-edit.svg"
 import deleteIcon from "./assets/icon-delete.svg"
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function App() {
   const currentUser = userData.currentUser;
