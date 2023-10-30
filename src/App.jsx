@@ -74,13 +74,14 @@ function Comment({comment, currentUser}){
             <p className="text-primary-blue font-bold">{score}</p>
             <button onClick={handleDecrement}><img src={minusIcon} alt="minus Icon" /></button>
           </div>
-          {!isCurrentUser && (<button className="text-primary-blue font-bold flex items-center gap-2"><img src={replyIcon} alt="reply Icon" />Reply</button>)}
-          {isCurrentUser && (
-            <div className="flex justify-between items-center">
-              <button className="text-red-500 font-bold flex items-center gap-1" onClick={handleDeleteClick}><img src={deleteIcon} alt="delete Icon" />Delete</button>
-              <button className="text-primary-blue font-bold flex items-center gap-1"><img src={editIcon} alt="edit Icon" />Edit</button>
-            </div>
-          )}
+          {!isCurrentUser 
+            ?  (<button className="text-primary-blue font-bold flex items-center gap-2"><img src={replyIcon} alt="reply Icon" />Reply</button>)
+            :  (<div className="flex justify-between items-center">
+                  <button className="text-red-500 font-bold flex items-center gap-1" onClick={handleDeleteClick}><img src={deleteIcon} alt="delete Icon" />Delete</button>
+                  <button className="text-primary-blue font-bold flex items-center gap-1"><img src={editIcon} alt="edit Icon" />Edit</button>
+                </div>
+               )
+          }
         </div>
       </li>
       {comment.replies && <ul className="border-l-2 border-gray-300 pl-2 mt-4 ml-4">{comment.replies.map((reply)=>(<CommentReplies reply={reply} key={reply.id} currentUser={currentUser} handleDeleteClick={handleDeleteClick} />))}</ul> }
@@ -108,13 +109,14 @@ function CommentReplies({reply, currentUser, handleDeleteClick}){
           <p className="text-primary-blue font-bold">{score}</p>
           <button onClick={handleDecrement}><img src={minusIcon} alt="minus Icon" /></button>
         </div>
-        {!isCurrentUser && (<button className="text-primary-blue font-bold flex items-center gap-2"><img src={replyIcon} alt="reply Icon" />Reply</button>)}
-          {isCurrentUser && (
-            <div className="flex justify-around items-center">
-              <button className="text-red-500 font-bold flex items-center gap-1" onClick={handleDeleteClick}><img src={deleteIcon} alt="delete Icon" />Delete</button>
-              <button className="text-primary-blue font-bold flex items-center gap-1"><img src={editIcon} alt="edit Icon" />Edit</button>
-            </div>
-          )}
+        {!isCurrentUser 
+            ?  (<button className="text-primary-blue font-bold flex items-center gap-2"><img src={replyIcon} alt="reply Icon" />Reply</button>)
+            :  (<div className="flex justify-between items-center">
+                  <button className="text-red-500 font-bold flex items-center gap-1" onClick={handleDeleteClick}><img src={deleteIcon} alt="delete Icon" />Delete</button>
+                  <button className="text-primary-blue font-bold flex items-center gap-1"><img src={editIcon} alt="edit Icon" />Edit</button>
+                </div>
+               )
+        }
       </div>
     </li>
   )
