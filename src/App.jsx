@@ -69,7 +69,7 @@ function Comment({comment, currentUser}){
         </div>
         <p className="text-neutral-graylish font-medium my-4">{comment.content}</p>
         <div className="grid grid-cols-2 gap-16">
-          <div className="flex justify-center items-center gap-4 bg-gray-200  px-3 py-2 rounded-xl">
+          <div className="flex justify-center items-center gap-4 bg-sky-50  px-3 py-2 rounded-xl">
             <button onClick={handleIncrement}><img src={plusIcon} alt="Plus Icon" /></button>
             <p className="text-primary-blue font-bold">{score}</p>
             <button onClick={handleDecrement}><img src={minusIcon} alt="minus Icon" /></button>
@@ -104,7 +104,7 @@ function CommentReplies({reply, currentUser, handleDeleteClick}){
       </div>
       <p className="text-neutral-graylish font-medium my-4"><span className="font-bold text-primary-blue" >@{reply.replyingTo}</span> {reply.content}</p>
       <div className="grid grid-cols-2 gap-10">
-        <div className="flex justify-center items-center gap-4 bg-gray-200  px-3 py-2 rounded-xl col-span-1">
+        <div className="flex justify-center items-center gap-4 bg-sky-50   px-3 py-2 rounded-xl col-span-1">
           <button onClick={handleIncrement}><img src={plusIcon} alt="Plus Icon" /></button>
           <p className="text-primary-blue font-bold">{score}</p>
           <button onClick={handleDecrement}><img src={minusIcon} alt="minus Icon" /></button>
