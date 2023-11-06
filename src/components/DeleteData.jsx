@@ -7,7 +7,7 @@ export default function DeleteData({ id, type, deleteComment, deleteReply, setSh
       
   return (
     <div className="flex items-center justify-center px-3 fixed top-0 left-0 w-screen h-screen z-50 bg-color5">
-      <div className="p-3 w-11/12 h-56 top-2/4 rounded-lg bg-white">
+      <div className="p-3 w-11/12 h-56 top-2/4 rounded-lg bg-white md:w-1/4">
         <h1 className="text-neutral-blue font-bold text-lg">
           Delete {type}
         </h1>

@@ -44,8 +44,8 @@ export default function CommentsList({currentUser}) {
     }
   
     return(
-      <main>
-        <ul className="py-4">
+      <main className="flex flex-col justify-center items-center p-3 md:w-3/6">
+        <ul>
           {comments.map((comment)=>(
             <Comment
               key={comment.id}
@@ -59,7 +59,6 @@ export default function CommentsList({currentUser}) {
               {...comment}
             />
           ))}
-          
         </ul>
         <NewComment currentUser={currentUser} handleSubmit={addComment} initialText="" buttonText="send" />    
       </main>
