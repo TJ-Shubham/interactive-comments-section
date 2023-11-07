@@ -1,9 +1,9 @@
 import { useState } from "react";
-import replyIcon from "../assets/icon-reply.svg";
-import plusIcon from "../assets/icon-plus.svg";
-import minusIcon from "../assets/icon-minus.svg"
-import editIcon from "../assets/icon-edit.svg"
-import deleteIcon from "../assets/icon-delete.svg"
+import replyIcon from "/icon-reply.svg";
+import plusIcon from "/icon-plus.svg";
+import minusIcon from "/icon-minus.svg"
+import editIcon from "/icon-edit.svg"
+import deleteIcon from "/icon-delete.svg"
 import NewComment from "./NewComment";
 import DeleteData from "./DeleteData";
 
